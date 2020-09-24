@@ -1,0 +1,707 @@
+$color1: #4f8afd;
+$color2: #ae51e5;
+$color3: #51dd99;
+$color4: #e9b34e;
+$color5: #b7bcbd;
+$color6: #fff;
+$color7: #111b35;
+$colors: #4f8afd #ae51e5 #51dd99 #e9b34e #b7bcbd #fff;
+html, body, p {
+  margin: 0;
+  padding: 0;
+}
+
+.bg {
+  background-color: $color7;
+}
+
+@each $color in $colors {
+  $index: index($colors, $color);
+  .c#{$index} {
+    color: $color
+  }
+}
+
+.flex-box-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-box-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-item-none {
+  flex: none;
+}
+
+.flex-item {
+  flex: 1;
+}
+
+$lineColor: #ac52e2 #ebb251 #d8303c #50df9c #5288ff;
+@each $color in $lineColor {
+  $i: index($lineColor, $color);
+  .line#{$i} {
+    border-bottom: 1px solid $color;
+  }
+}
+
+.wrapper {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+
+  .view-box {
+    border: 1px solid #3a6fdf;
+
+    &-header {
+      padding: 0.05rem;
+      /* width: 50%;*/
+      font-size: 0.08rem;
+      color: $color6;
+      background-image: linear-gradient(to right, #294a94, transparent);
+
+      .btn-wrapper {
+        display: flex;
+        justify-content: flex-end;
+
+        .btn {
+          padding: 0.02rem 0.04rem;
+          margin-right: 0.05rem;
+          cursor: pointer;
+          background-color: #1f3b75;
+
+          &.selected {
+            background-color: #3a6fdf;
+          }
+
+          &:hover {
+            background-color: #3a6fdf;
+          }
+        }
+      }
+    }
+  }
+
+  .header-wrapper {
+    background-image: url(../images/bg/top.png);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    color: #fff;
+    margin-bottom: 0.2rem;
+
+    .header-inner {
+      padding: 0.12rem 0rem 0.12rem 0rem;
+      font-size: 0.3rem;
+      text-align: center;
+
+      .header-l {
+        width: 15%;
+        padding-top: 0.08rem;
+
+        .time {
+          padding-bottom: 0.06rem;
+          font-size: 0.15rem;
+          color: $color1;
+
+          .noon-text {
+            padding-right: 0.05rem;
+          }
+        }
+
+        .date {
+          font-size: 0.09rem;
+          color: $color5;
+
+          .date-text {
+            padding-right: 0.05rem;
+          }
+
+          .week-text {
+            padding-left: 0.05rem;
+          }
+
+          .date-split {
+            border-left: 1px solid rgba($color5, 0.5);
+            display: inline-block;
+            height: 0.09rem;
+            margin-bottom: -0.02rem;
+          }
+        }
+      }
+
+      .header-r {
+        width: 15%;
+        padding-top: 0.08rem;
+        font-size: 0.1rem;
+
+        .full-screen {
+          text-align: right;
+          margin-right: 0.2rem;
+
+          &-inner {
+            padding: 0.05rem 0.1rem;
+            background-image: url(../images/bg/button.png);
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            font-size: 0.1rem;
+
+          }
+        }
+      }
+    }
+  }
+
+  .home {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    .center-wrapper {
+      margin: auto auto;
+      position: relative;
+      width: 95%;
+      height: 95%;
+
+      .data-show {
+        position: relative;
+        margin: auto auto;
+        height: 100%;
+        background-color: $color7;
+        background-image: url(../images/bg/background.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center center;
+
+        .data-show-inner {
+          position: relative;
+          width: 100%;
+          height: 100%;
+
+          .t-l, .t-r, .b-l, .b-r {
+            position: absolute;
+            height: 49%;
+            width: 50%;
+            background-size: auto 100%;
+            background-repeat: no-repeat;
+          }
+
+          .t-l {
+            top: 0;
+            left: 0;
+            background-image: url(../images/bg/huodai/r.png);
+            background-position: top left;
+          }
+
+          .t-r {
+            top: 0;
+            right: 0;
+            background-image: url(../images/bg/bochuan/l.png);
+            background-position: top right;
+          }
+
+          .b-l {
+            bottom: 0;
+            left: 0;
+            background-image: url(../images/bg/tuoche/r.png);
+            background-position: bottom left;
+          }
+
+          .b-r {
+            bottom: 0;
+            right: 0;
+            background-image: url(../images/bg/zhuangxie/l.png);
+            background-position: bottom right;
+          }
+        }
+      }
+
+      .center-l-t, .center-r-t, .center-l-b, .center-r-b {
+        position: absolute;
+        width: 50%;
+        height: 49%;
+
+        .total {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 100%;
+
+          &-title {
+            height: 0.4rem;
+            width: 1.8rem;
+            margin-bottom: 0.1rem;
+            color: $color6;
+            font-size: 0.1rem;
+            background-size: auto 100%;
+            background-repeat: no-repeat;
+            text-align: center;
+            line-height: 0.4rem;
+
+            &-sub {
+              color: $color5;
+              font-size: 0.08rem;
+            }
+          }
+
+          &-num {
+            color: $color1;
+            font-size: 0.22rem;
+          }
+        }
+
+        .l {
+          position: absolute;
+          height: 100%;
+          left: 0;
+          top: 0;
+          background-size: auto 100%;
+          background-repeat: no-repeat;
+        }
+
+        .c {
+          position: absolute;
+          height: 100%;
+          left: 0;
+          top: 0;
+          background-repeat: no-repeat;
+          background-size: 100% 100%;
+        }
+
+        .r {
+          position: absolute;
+          height: 100%;
+          right: 0;
+          top: 0;
+          background-size: auto 100%;
+          background-repeat: no-repeat;
+
+        }
+      }
+
+      .center-l-t {
+        top: 0;
+        left: 0;
+
+        .l {
+          width: 1%;
+          background-image: url(../images/bg/huodai/l.png);
+        }
+
+        .c {
+          left: 1%;
+          width: 99%;
+          background-image: url(../images/bg/huodai/c.png);
+
+        }
+
+        .total {
+          &-title {
+            background-image: url(../images/bg/huodai.png);
+          }
+
+          &-num {
+            color: $color1;
+          }
+        }
+
+      }
+
+      .center-r-t {
+        top: 0;
+        right: 0;
+
+        .c {
+          width: 99%;
+          background-image: url(../images/bg/bochuan/c.png);
+
+        }
+
+        .r {
+          width: 1%;
+          background-image: url(../images/bg/bochuan/r.png);
+          background-position: top right;
+        }
+
+        .total {
+          &-title {
+            background-image: url(../images/bg/bochuan.png);
+          }
+
+          &-num {
+            color: $color2;
+          }
+        }
+      }
+
+      .center-l-b {
+        bottom: 0;
+        left: 0;
+
+        .l {
+          width: 1%;
+          background-image: url(../images/bg/tuoche/l.png);
+        }
+
+        .c {
+          left: 1%;
+          width: 99%;
+          background-image: url(../images/bg/tuoche/c.png);
+
+        }
+
+        .total {
+          &-title {
+            background-image: url(../images/bg/tuoche.png);
+          }
+
+          &-num {
+            color: $color3;
+          }
+        }
+
+      }
+
+      .center-r-b {
+        bottom: 0;
+        right: 0;
+
+        .c {
+          width: 99%;
+          background-image: url(../images/bg/zhuangxie/c.png);
+
+        }
+
+        .r {
+          width: 1%;
+          background-image: url(../images/bg/zhuangxie/r.png);
+          background-position: bottom right;
+        }
+
+        .total {
+          &-title {
+            background-image: url(../images/bg/zhuangxie.png);
+          }
+
+          &-num {
+            color: $color4;
+          }
+        }
+      }
+    }
+  }
+
+  .huo-dai {
+    position: relative;
+    width: 96%;
+    height: 97%;
+    margin: auto auto;
+
+    .circle {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      margin-left: -0.08rem;
+      margin-top: -0.08rem;
+      width: 0.12rem;
+      height: 0.12rem;
+      border-radius: 100%;
+      background-image: url(../images/bg/wharf.png);
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: contain;
+
+      &-line1 {
+        position: absolute;
+        border-bottom: 1px solid #ac52e2;
+        width: 100%;
+        left: -100%;
+        top: 50%;
+      }
+
+      &-line2 {
+        position: absolute;
+        border-bottom: 1px solid #ebb251;
+        width: 100%;
+        left: -100%;
+        top: 50%;
+      }
+
+      &-line3 {
+        position: absolute;
+        border-bottom: 1px solid #d8303c;
+        width: 100%;
+        left: -100%;
+        top: 50%;
+      }
+
+      &-line4 {
+        position: absolute;
+        border-bottom: 1px solid #50df9c;
+        width: 100%;
+        left: -100%;
+        top: 50%;
+      }
+
+      &-line5 {
+        position: absolute;
+        border-bottom: 1px solid #5288ff;
+        width: 100%;
+        left: -100%;
+        top: 50%;
+      }
+
+      &.bg1 {
+        background-color: #ac52e2;
+        box-shadow: 0 0 0 0.02rem rgba(172, 82, 226, 0.25);
+        border: 0.02rem solid #ac52e2;
+      }
+
+      &.bg2 {
+        background-color: #ebb251;
+        box-shadow: 0 0 0 0.02rem rgba(235, 178, 81, 0.25);
+        border: 0.02rem solid #ebb251;
+      }
+
+      &.bg3 {
+        background-color: #d8303c;
+        box-shadow: 0 0 0 0.02rem rgba(216, 48, 60, 0.25);
+        border: 0.02rem solid #d8303c;
+      }
+
+      &.bg4 {
+        background-color: #50df9c;
+        box-shadow: 0 0 0 0.02rem rgba(80, 223, 156, 0.25);
+        border: 0.02rem solid #50df9c;
+      }
+
+      &.bg5 {
+        background-color: #5288ff;
+        box-shadow: 0 0 0 0.02rem rgba(82, 136, 255, 0.25);
+        border: 0.02rem solid #5288ff;
+      }
+    }
+
+    .dotted {
+      position: absolute;
+      width: 0.08rem;
+      height: 0.08rem;
+      border-radius: 100%;
+
+      &.bg1 {
+        left: 89%;
+        top: 29%;
+        background-color: #ac52e2;
+        box-shadow: 0 0 0.05rem 0.05rem rgba(172, 82, 226, 0.8);
+      }
+
+      &.bg2 {
+        left: 73%;
+        top: 37%;
+        background-color: #ebb251;
+        box-shadow: 0 0 0.05rem 0.05rem rgba(235, 178, 81, 0.8);
+      }
+
+      &.bg3 {
+        left: 78%;
+        top: 48%;
+        background-color: #d8303c;
+        box-shadow: 0 0 0.05rem 0.05rem rgba(216, 48, 60, 0.8);
+      }
+
+      &.bg4 {
+        left: 82%;
+        top: 65%;
+        background-color: #50df9c;
+        box-shadow: 0 0 0.05rem 0.05rem rgba(80, 223, 156, 0.8);
+      }
+
+      &.bg5 {
+        left: 70%;
+        top: 77%;
+        background-color: #5288ff;
+        box-shadow: 0 0 0.05rem 0.05rem rgba(82, 136, 255, 0.8);
+      }
+    }
+
+    .count-box {
+      text-align: center;
+      margin-bottom: 0.2rem;
+      height: 0.4rem;
+
+      &-title {
+        padding-right: 0.2rem;
+        font-size: 0.2rem;
+        color: $color1;
+        display: inline-block;
+        vertical-align: center;
+      }
+
+      &-counter {
+        display: inline-block;
+        vertical-align: center;
+        font-size: 0.2rem;
+        color: $color6;
+      }
+    }
+
+    .counter-box {
+      &-item {
+        width: 0.2rem;
+        height: 0.3rem;
+        padding: 0.01rem;
+        margin-right: 0.04rem;
+        line-height: 0.3rem;
+        background-image: url(../images/bg/shuzi.png);
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        display: inline-block;
+        vertical-align: middle;
+
+        &-split {
+          width: 0.1rem;
+          height: 0.3rem;
+          padding: 0.01rem;
+          line-height: 0.3rem;
+          background-image: url(../images/bg/comma.png);
+          background-size: 30% 30%;
+          background-position: left bottom;
+          background-repeat: no-repeat;
+          display: inline-block;
+          vertical-align: middle;
+        }
+
+        &.uncount {
+          color: #2e57ae;
+        }
+      }
+    }
+
+    .map-box {
+      .view-box-body-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+      }
+
+      .map-bg-wrapper {
+        margin: 0.1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .map-bg {
+          position: relative;
+          background-image: url(../images/bg/map1.png);
+          background-position: center center;
+          background-repeat: no-repeat;
+          background-size: contain;
+
+        }
+      }
+
+      .map-data-title {
+        width: 20%;
+        padding: 0.05rem 0.1rem 0.05rem 0.05rem;
+        justify-content: center;
+
+        &-box {
+          position: relative;
+          margin-bottom: 0.1rem;
+          padding: 0.1rem 0.01rem 0.1rem 0.12rem;
+          color: $color6;
+
+          &.bg1 {
+            background-color: #423176;
+          }
+
+          &.bg2 {
+            background-color: #555048;
+          }
+
+          &.bg3 {
+            background-color: #502945;
+          }
+
+          &.bg4 {
+            background-color: #275c5f;
+          }
+
+          &.bg5 {
+            background-color: #26427c;
+          }
+
+          &-inner {
+            &-sub {
+              font-size: 0.08rem;
+              padding-bottom: 0.03rem;
+              font-weight: bold;
+            }
+
+            &-text {
+
+              font-size: 0.08rem;
+              color: rgba(256, 256, 256, 0.75);
+            }
+
+            &-num {
+              padding: 0 0.02rem;
+            }
+          }
+
+        }
+      }
+
+      .map-bottom-bg {
+        background-image: url(../images/bg/background-bottomn.png);
+        background-position: bottom;
+        background-repeat: no-repeat;
+        background-size: 100% 1rem;
+      }
+
+      .harbor-total {
+        position: absolute;
+        left: 10%;
+        bottom: 30%;
+        padding: 0.06rem;
+        border: 2px solid $color1;
+        color: $color6;
+        background-image: linear-gradient(45deg, rgba(97, 46, 82, 0.75), transparent);
+        font-size: 0.2rem;
+
+        &-text {
+
+        }
+      }
+    }
+
+    .chart {
+      margin-left: 0.1rem;
+
+      .container-num {
+        margin-bottom: 0.1rem;
+      }
+
+      .cooperation {
+        margin-right: 0.1rem;
+      }
+
+      .view-box {
+        position: relative;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+  }
+}
+
+
+.swiper-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}

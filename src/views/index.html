@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>运营大数据</title>
+    <link rel="stylesheet" href="../source/themes/common/base.css?rev=@@hash">
+    <link rel="stylesheet" href="../source/scripts/lib/swiper/swiper-bundle.css">
+    <script type="text/javascript" src="../source/scripts/lib/query/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript" src="../source/scripts/lib/echart/echarts.min.js"></script>
+    <script type="text/javascript" src="../source/scripts/lib/swiper/swiper-bundle.js"></script>
+    <script type="text/javascript" src="../source/scripts/lib/model/base.js?rev=@@hash"></script>
+    <script type="text/javascript" src="../source/scripts/lib/model/datetime.js?rev=@@hash"></script>
+    <script type="text/javascript" src="../source/scripts/lib/model/countHandler.js?rev=@@hash"></script>
+
+
+</head>
+<body>
+
+<div class="wrapper bg flex-box-column">
+    <header class="header-wrapper ">
+        <div class="header-inner">
+            <div class="flex-box-row">
+                <div class="flex-item-none header-l time-count ">
+
+                </div>
+                <div class="flex-item header-c">货代板块</div>
+                <div class="flex-item-none header-r">
+                    <div class="full-screen">
+                        <span class="full-screen-inner">全屏</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </header>
+    <!-- Slider main container -->
+    <div class="swiper-container">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+            <!-- Slides -->
+
+            <div class="swiper-slide">
+
+                <div class="huo-dai flex-box-column">
+                    <div class="count-box flex-item-none">
+                        <div class="count-box-title">货代总量T</div>
+                        <div class="count-box-counter"></div>
+                    </div>
+                    <div class="flex-box-row flex-item">
+                        <div class="flex-item map view-box flex-box-column">
+                            <div class="view-box-header">
+                                港口累计柜量
+                            </div>
+                            <div class="view-box-body map-box flex-item">
+                                <div class="view-box-body-inner flex-box-row map-bottom-bg">
+
+                                    <div class="flex-item map-bg-wrapper" style="flex:3.5;">
+                                        <div class="map-bg">
+                                            <div class="dotted bg1"></div>
+                                            <div class="dotted bg2"></div>
+                                            <div class="dotted bg3"></div>
+                                            <div class="dotted bg4"></div>
+                                            <div class="dotted bg5"></div>
+                                            <div class="harbor-total">覆盖港口 <span class="harbor-total-text"></span>个
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="flex-item map-data-title flex-box-column">
+                                        <div class="map-data-title-box bg1">
+                                            <div class="map-data-title-box-inner">
+                                                <div class=" map-data-title-box-inner-sub">东北片区</div>
+                                                <div class=" map-data-title-box-inner-text">总：<span
+                                                        class="map-data-title-box-inner-num total"></span><span
+                                                        class="map-data-title-box-inner-tu">TU</span></div>
+                                                <div class=" map-data-title-box-inner-text">本月新增：<span
+                                                        class="map-data-title-box-inner-num add"></span><span
+                                                        class="map-data-title-box-inner-tu">TU</span></div>
+                                            </div>
+                                            <div class="circle bg1">
+                                                <div class="circle-line1"></div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="map-data-title-box bg2">
+                                            <div class="map-data-title-box-inner">
+                                                <div class=" map-data-title-box-inner-sub">华北片区</div>
+                                                <div class=" map-data-title-box-inner-text">总：<span
+                                                        class="map-data-title-box-inner-num total"></span><span
+                                                        class="map-data-title-box-inner-tu">TU</span></div>
+                                                <div class=" map-data-title-box-inner-text">本月新增：<span
+                                                        class="map-data-title-box-inner-num add"></span><span
+                                                        class="map-data-title-box-inner-tu">TU</span></div>
+                                            </div>
+                                            <div class="circle bg2">
+                                                <div class="circle-line2"></div>
+                                            </div>
+                                        </div>
+
+                                        <div class="map-data-title-box bg3 ">
+                                            <div class="map-data-title-box-inner">
+                                                <div class=" map-data-title-box-inner-sub">山东片区</div>
+                                                <div class=" map-data-title-box-inner-text">总：<span
+                                                        class="map-data-title-box-inner-num total"></span><span
+                                                        class="map-data-title-box-inner-tu">TU</span></div>
+                                                <div class=" map-data-title-box-inner-text">本月新增：<span
+                                                        class="map-data-title-box-inner-num add"></span><span
+                                                        class="map-data-title-box-inner-tu">TU</span></div>
+                                            </div>
+                                            <div class="circle bg3">
+                                                <div class="circle-line3"></div>
+                                            </div>
+                                        </div>
+
+                                        <div class="map-data-title-box bg4 ">
+                                            <div class="map-data-title-box-inner">
+                                                <div class=" map-data-title-box-inner-sub">华东片区</div>
+                                                <div class=" map-data-title-box-inner-text">总：<span
+                                                        class="map-data-title-box-inner-num total"></span><span
+                                                        class="map-data-title-box-inner-tu">TU</span></div>
+                                                <div class=" map-data-title-box-inner-text">本月新增：<span
+                                                        class="map-data-title-box-inner-num add"></span><span
+                                                        class="map-data-title-box-inner-tu">TU</span></div>
+                                            </div>
+                                            <div class="circle bg4">
+                                                <div class="circle-line4"></div>
+                                            </div>
+                                        </div>
+
+                                        <div class="map-data-title-box bg5 ">
+                                            <div class="map-data-title-box-inner">
+                                                <div class=" map-data-title-box-inner-sub">华南片区</div>
+                                                <div class=" map-data-title-box-inner-text">总：<span
+                                                        class="map-data-title-box-inner-num total"></span><span
+                                                        class="map-data-title-box-inner-tu">TU</span></div>
+                                                <div class=" map-data-title-box-inner-text">本月新增：<span
+                                                        class="map-data-title-box-inner-num add"></span><span
+                                                        class="map-data-title-box-inner-tu">TU</span></div>
+                                            </div>
+                                            <div class="circle bg5">
+                                                <div class="circle-line5"></div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex-item chart flex-box-column">
+                            <div class="flex-item container-num">
+                                <div class="view-box flex-box-column ">
+                                    <div class="view-box-header flex-box-row">
+                                        <div class="flex-item">货代业务柜量</div>
+                                        <div class="flex-item btn-wrapper container-total">
+                                            <div class="btn">总柜量</div>
+                                            <div class="btn">月新增</div>
+                                            <div class="btn">日新增</div>
+                                        </div>
+                                    </div>
+                                    <div id="container-wrapper" class="view-box-body map-box flex-item">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex-item flex-box-row">
+                                <div class="flex-item cooperation">
+                                    <div class="view-box flex-box-column">
+                                        <div class="view-box-header flex-box-row">
+                                            <div class="flex-item-none">合作客户量</div>
+                                            <div class="flex-item btn-wrapper cooperation-total">
+                                                <div class="btn">总客户量</div>
+                                                <div class="btn">月新增</div>
+                                                <div class="btn">日新增</div>
+                                            </div>
+                                        </div>
+
+                                        <div id="cooperation-wrapper" class="view-box-body map-box flex-item">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex-item goodsType">
+                                    <div class="view-box  flex-box-column" style="position: relative;">
+                                        <div class="view-box-header">
+                                            货物类型
+                                        </div>
+
+                                        <div id="goodsType-wrapper" style="position: relative;z-index: 2;"
+                                             class="view-box-body map-box flex-item">
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide" style="display: none">
+                <!--总看板-->
+                <div class="home">
+
+                    <div class="center-wrapper">
+                        <div class="center-l-t ">
+                            <div class="l"></div>
+                            <div class="c">
+                                <div class="total">
+                                    <div class="total-inner">
+                                        <div class="total-title">货代板块</div>
+                                        <div class="total-title-sub">总量T</div>
+                                        <div class="total-num">5,343,329</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="center-r-t">
+                            <div class="c">
+                                <div class="total">
+                                    <div class="total-inner">
+                                        <div class="total-title">驳船板块</div>
+                                        <div class="total-title-sub">总量T</div>
+                                        <div class="total-num">5,343,329</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="r"></div>
+                        </div>
+                        <div class="center-l-b">
+                            <div class="l"></div>
+                            <div class="c">
+                                <div class="total">
+                                    <div class="total-inner">
+                                        <div class="total-title">拖车板块</div>
+                                        <div class="total-title-sub">总量T</div>
+                                        <div class="total-num">5,343,329</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="center-r-b">
+                            <div class="c">
+                                <div class="total">
+                                    <div class="total-inner">
+                                        <div class="total-title">装卸板块</div>
+                                        <div class="total-title-sub">总量T</div>
+                                        <div class="total-num">5,343,329</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="r"></div>
+                        </div>
+                        <div class="data-show">
+                            <div class="data-show-inner">
+                                <div class="t-l"></div>
+                                <div class="t-r"></div>
+                                <div class="b-l"></div>
+                                <div class="b-r"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--
+                       <div class="swiper-slide">Slide 3</div>-->
+        </div>
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+
+
+    </div>
+</div>
+</body>
+<script type="text/javascript" src="../source/scripts/lib/amfe-flexible/index.js"></script>
+<script type="text/javascript" src="../source/scripts/index.js?rev=@@hash"></script>
+<script type="text/javascript" src="../source/scripts/lib/model/createEchart.js?rev=@@hash"></script>
+
+</html>
